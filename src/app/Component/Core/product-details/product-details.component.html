@@ -1,0 +1,27 @@
+<div class="card mb-4 rounded-3 shadow-sm" *ngIf="product; else notFound">
+  <div class="row g-0">
+    <div class="col-md-6">
+      <div class="card-header py-3">
+        <h4 class="my-0 fw-normal">{{ product.name }}</h4>
+      </div>
+      <div class="card-body">
+        <h1 class="card-title pricing-card-title">{{ product.description }}</h1>
+        <ul class="list-unstyled mt-3 mb-4">
+          <li>Price: {{ product.price }}</li>
+          <li *ngIf="product?.onSale">Discount: {{ product.discount  }}</li>
+          <li *ngIf="product?.quantity == 0">Sold Out</li>
+        </ul>
+        <button type="button" class="w-50 btn btn-lg btn-outline-primary custom-btn" [disabled]="product?.quantity == 0">Add To Cart</button>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <img [src]="product.img" class="card-img img-fluid" style="object-fit: cover; max-height: 500px;" />
+    </div>
+  </div>
+</div>
+
+<ng-template #notFound>
+  <div class="bg-dark text-light text-center p-5 rounded">
+    <h1>this id is not valid</h1>
+  </div>
+</ng-template>
