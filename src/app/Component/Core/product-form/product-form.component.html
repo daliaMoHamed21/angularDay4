@@ -1,0 +1,88 @@
+<div class="container">
+  <h2 class="text-center mb-4">Product Form</h2>
+  <hr>
+  <form class="needs-validation" [formGroup]="myForm" (submit)="onSubmit($event)">
+    <div class="row justify-content-center"> 
+      <div class="col-md-6">
+        <label for="validationCustom01" class="form-label">Name</label>
+        <input formControlName="name" type="text" class="form-control" id="validationCustom01" required 
+        [ngClass]="{
+          'is-valid': nameConttrol.valid,
+          'is-invalid': nameConttrol.errors && nameConttrol.touched
+        }"/>
+        <div class="valid-feedback">Name Looks good!</div>
+       <div class="invalid-feedback">Name is required</div>
+      </div>
+    </div>
+    <br>
+    <div class="row justify-content-center " > 
+      <div class="col-md-6">
+        <label for="validationCustom02" class="form-label ">Description</label>
+        <input formControlName="description" type="text" class="form-control" id="validationCustom02" required 
+        [ngClass]="{
+          'is-valid': descriptionConttrol.valid,
+          'is-invalid': descriptionConttrol.errors && descriptionConttrol.touched
+        }"/>
+        <div class="valid-feedback">Description Looks good!</div>
+      </div>
+    </div>
+    <br>
+    <div class="row justify-content-center " > 
+      <div class="col-md-6">
+        <label for="validationCustom03" class="form-label ">Image</label>
+        <input formControlName="img" type="text" class="form-control" id="validationCustom03" 
+        required 
+     
+        />
+        <div class="valid-feedback">Looks good!</div>
+      </div>
+    </div>
+    <br>
+    <div class="row justify-content-center"> 
+      <div class="col-md-6">
+        <label for="validationCustom04" class="form-label">Price</label>
+        <input formControlName="price" type="number" class="form-control" id="validationCustom04" 
+        required
+        [ngClass]="{
+          'is-valid': priceConttrol.valid,
+          'is-invalid': priceConttrol.errors && priceConttrol.touched
+        }" />
+        <div class="valid-feedback">Price is Valid!</div>
+      </div>
+    </div>
+    <!-- Additional input boxes for Discount, Quantity, and OnSale -->
+    <br>
+    <div class="row justify-content-center"> 
+      <div class="col-md-6">
+        <label for="validationCustom05" class="form-label">Discount</label>
+        <input formControlName="discount" type="number" class="form-control" id="validationCustom05" required />
+        <div class="valid-feedback">Discount is Valid!</div>
+      </div>
+    </div>
+    <br>
+    <div class="row justify-content-center"> 
+      <div class="col-md-6">
+        <label for="validationCustom06" class="form-label">Quantity</label>
+        <input formControlName="quantity" type="number" class="form-control" id="validationCustom06" required />
+        <div class="valid-feedback">Quantity is Valid!</div>
+      </div>
+    </div>
+    <br>
+    <div class="row justify-content-center"> 
+      <div class="col-md-6">
+        <label for="validationCustom07" class="form-label">On Sale</label>
+        <select formControlName="onSale" class="form-select" id="validationCustom07" required>
+          <option value="true">Yes</option>
+          <option value="false">No</option>
+        </select>
+        <div class="valid-feedback">On Sale status is Valid!</div>
+      </div>
+    </div>
+    
+    <div class="row justify-content-center mt-3"> 
+      <div class="col-md-4">
+        <button class="btn btn-primary custom-btn w-100" type="submit">Add Product</button>
+      </div>
+    </div>
+  </form>
+</div>
